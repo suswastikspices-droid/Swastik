@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import axios from "axios";
 
-const API_BASE = "http://localhost:5000/api/categories";
+const API_BASE = `${process.env.NEXT_PUBLIC_API_BASE_URL}/categories`;
 
 export const useCategoryStore = create((set, get) => ({
   categories: [],

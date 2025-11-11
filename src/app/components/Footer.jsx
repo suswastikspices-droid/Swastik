@@ -26,7 +26,7 @@ const Footer = () => {
     const fetchProducts = async () => {
       try {
         const res = await fetch(
-          "http://localhost:5000/api/products/all/?limit=100"
+          `${process.env.NEXT_PUBLIC_API_BASE_URL}/products/all/?limit=100`
         );
         const data = await res.json();
 

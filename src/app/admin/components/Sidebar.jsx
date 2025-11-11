@@ -4,25 +4,36 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FaHome, FaChevronLeft, FaTimes } from "react-icons/fa";
 import { LuComponent } from "react-icons/lu";
-
+import { FaThumbsUp } from "react-icons/fa";
+import { FaVideo } from "react-icons/fa6";
+import { FaUsersLine } from "react-icons/fa6";
+import { FaBuilding } from "react-icons/fa";
+import { PiCardsThree } from "react-icons/pi";
+import { MdReviews } from "react-icons/md";
+import { CiSignpostDuo1 } from "react-icons/ci";
+import { FaBloggerB } from "react-icons/fa";
+import { RiPinDistanceLine } from "react-icons/ri";
+import { FaPersonCircleQuestion } from "react-icons/fa6";
+import { FaBox } from "react-icons/fa";
 export default function Sidebar({ open, collapsed, setCollapsed, setSidebarOpen }) {
   const pathname = usePathname();
 
   const navItems = [
      
-       
-     { label: "Quiries", path: "/admin/queries", icon: <LuComponent /> },
-   
-     { label: "Blogs", path: "/admin/blogs", icon: <LuComponent /> },
-    { label: "Hero Section", path: "/admin/hero", icon: <LuComponent /> },
+       { label: "Orders", path: "/admin", icon: <FaBox /> },
+     { label: "Quiries", path: "/admin/queries", icon: <FaPersonCircleQuestion /> },
+   { label: "Distributor Quiry", path: "/admin/distributor", icon: <RiPinDistanceLine /> },
+     { label: "Blogs", path: "/admin/blogs", icon: <FaBloggerB /> },
+    { label: "Hero Section", path: "/admin/hero", icon: <CiSignpostDuo1 /> },
     
     
     { label: "Category", path: "/admin/category", icon:  <LuComponent /> },
-     { label: "Testimonials", path: "/admin/testimonials", icon:  <LuComponent /> },
-     { label: "Category Cards Homepage", path: "/admin/categoryManager", icon:  <LuComponent /> },
-    { label: "Users", path: "/admin/users", icon: <LuComponent /> },
-     { label: "video Product Manager", path: "/admin/videoProductManager", icon: <LuComponent /> },
-    { label: "Company", path: "/admin/company", icon: <LuComponent /> },
+     { label: "Testimonials", path: "/admin/testimonials", icon:  <MdReviews /> },
+     { label: "Category Cards Homepage", path: "/admin/categoryManager", icon:  <PiCardsThree /> },
+    { label: "Users", path: "/admin/users", icon: <FaUsersLine /> },
+    { label: "Subscriber", path: "/admin/subscriber", icon: <FaThumbsUp /> },
+     { label: "video Product Manager", path: "/admin/videoProductManager", icon: <FaVideo /> },
+    { label: "Company", path: "/admin/company", icon: <FaBuilding  /> },
     // Add more items here
   ];
 
@@ -60,7 +71,7 @@ export default function Sidebar({ open, collapsed, setCollapsed, setSidebarOpen 
       </div>
 
       {/* Navigation */}
-      <ul className="space-y-3 px-2">
+      <ul className="space-y-3 overflow-auto px-2">
         {navItems.map((item) => {
           const isActive = pathname === item.path;
           return (
@@ -89,12 +100,7 @@ export default function Sidebar({ open, collapsed, setCollapsed, setSidebarOpen 
         })}
       </ul>
 
-      {/* Bottom Info */}
-      {!collapsed && (
-        <div className="absolute bottom-3 left-4 right-4 text-xs text-center border-t border-gray-200 pt-4">
-          © 2025 AdminPanel
-        </div>
-      )}
+    
     </div>
   );
 }

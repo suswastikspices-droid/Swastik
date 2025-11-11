@@ -1,7 +1,7 @@
 // src/store/useTestimonialStore.js
 import { create } from "zustand";
 
-const API_BASE = "http://localhost:5000/api/testimonials";
+const API_BASE = `${process.env.NEXT_PUBLIC_API_BASE_URL}/testimonials`;
 
 export const useTestimonialStore = create((set, get) => ({
   testimonials: [],

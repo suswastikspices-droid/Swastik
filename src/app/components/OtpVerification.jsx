@@ -15,7 +15,7 @@ const OtpVerification = ({ formData, setStep }) => {
     setMessage("");
 
     try {
-      const res = await axios.post("http://localhost:5000/auth/verify-otp", {
+      const res = await axios.post("https://swastik-backend-tlka.onrender.com/auth/verify-otp", {
         ...formData,
         otp,
       });

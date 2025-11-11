@@ -16,7 +16,7 @@ const ProductPage = () => {
     const fetchProduct = async () => {
       setLoading(true);
       try {
-        const { data } = await axios.get(`http://localhost:5000/api/products/slug/${ProductSlug}`);
+        const { data } = await axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/products/slug/${ProductSlug}`);
         setProduct(data.data); // the product object is inside data.data
       } catch (err) {
         console.error(err);

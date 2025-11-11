@@ -21,7 +21,7 @@ import {
   ChevronUp,
 } from "lucide-react";
 
-const API_BASE = "http://localhost:5000/api/contact";
+const API_BASE = `${process.env.NEXT_PUBLIC_API_BASE_URL}/contact`;
 
 export default function ContactSystem() {
   const router = useRouter();

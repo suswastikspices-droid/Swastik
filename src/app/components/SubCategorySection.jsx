@@ -12,7 +12,7 @@ const SubCategorySection = () => {
   useEffect(() => {
     const fetchSubcategories = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/subcategories");
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/subcategories`);
         const data = await res.json();
 
         const list = Array.isArray(data)

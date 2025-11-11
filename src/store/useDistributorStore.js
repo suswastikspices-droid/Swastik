@@ -3,7 +3,7 @@
 import { create } from "zustand";
 import toast from "react-hot-toast";
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+const API_BASE = `${process.env.NEXT_PUBLIC_API_BASE_URL}`;
 
 const useDistributorStore = create((set, get) => ({
   distributors: [],
@@ -17,7 +17,7 @@ const useDistributorStore = create((set, get) => ({
 
     try {
       set({ loading: true });
-      const response = await fetch(`${API_BASE}/api/distributors`, {
+      const response = await fetch(`${API_BASE}/distributors`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await response.json();
@@ -39,7 +39,7 @@ const useDistributorStore = create((set, get) => ({
   createDistributor: async (formData) => {
     try {
       set({ loading: true });
-      const response = await fetch(`${API_BASE}/api/distributors`, {
+      const response = await fetch(`${API_BASE}/distributors`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -72,7 +72,7 @@ const useDistributorStore = create((set, get) => ({
 
     try {
       set({ loading: true });
-      const response = await fetch(`${API_BASE}/api/distributors/${id}`, {
+      const response = await fetch(`${API_BASE}/distributors/${id}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` },
       });

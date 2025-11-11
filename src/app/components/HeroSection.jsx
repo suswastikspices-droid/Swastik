@@ -4,7 +4,7 @@ import axios from "axios";
 
 // API configuration
 const API_BASE_URL =
-  process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api";
+  process.env.NEXT_PUBLIC_API_URL || `${process.env.NEXT_PUBLIC_API_BASE_URL}`;
 const HERO_IMAGES_ENDPOINT = `${API_BASE_URL}/hero`;
 
 const HeroSection = () => {

@@ -20,7 +20,7 @@ const OrdersPage = () => {
   const [user, setUser] = useState(null);
   const [token, setToken] = useState(null);
 
-  const BASE_URL = "http://localhost:5000/api";
+  const BASE_URL = `${process.env.NEXT_PUBLIC_API_BASE_URL}`;
   const primaryColor = "#943900";
 
   // 🟢 Read user & token from localStorage (client-side only)

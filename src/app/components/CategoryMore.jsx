@@ -17,7 +17,7 @@ const ProductMore = ({ params }) => {
     const fetchData = async () => {
       try {
         const res = await fetch(
-          "http://localhost:5000/api/products/all"
+          `${process.env.NEXT_PUBLIC_API_BASE_URL}/products/all`
         );
         const data = await res.json();
 

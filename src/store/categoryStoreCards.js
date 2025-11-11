@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import axios from "axios";
 
-const API_URL = "http://localhost:5000/api/categoryCards"; // your backend endpoint
+const API_URL = `${process.env.NEXT_PUBLIC_API_BASE_URL}/categoryCards`; // your backend endpoint
 
 // ✅ Helper: Get token from localStorage
 const getToken = () => {

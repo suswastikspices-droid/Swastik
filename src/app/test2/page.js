@@ -7,7 +7,7 @@ export default function Navbar() {
 
   useEffect(() => {
     // Fetch products from API
-    fetch("http://localhost:5000/api/products?limit=100")
+    fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/products?limit=100`)
       .then((res) => res.json())
       .then((data) => {
         // Group products by subCategory

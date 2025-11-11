@@ -2,7 +2,7 @@ import { create } from "zustand";
 import toast from "react-hot-toast";
 
 // ✅ Define your base URL once here
-const BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+const BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 
 export const useSubscriberStore = create((set, get) => ({
   subscribers: [],
@@ -28,7 +28,7 @@ export const useSubscriberStore = create((set, get) => ({
       set({ loading: true });
 
       const headers = get().getAuthHeaders();
-      const res = await fetch(`${BASE_URL}/api/subscribers`, { headers });
+      const res = await fetch(`${BASE_URL}/subscribers`, { headers });
 
       if (!res.ok) throw new Error(`HTTP error ${res.status}`);
       const data = await res.json();
@@ -51,7 +51,7 @@ export const useSubscriberStore = create((set, get) => ({
     try {
       set({ loading: true });
 
-      const res = await fetch(`${BASE_URL}/api/subscribers`, {
+      const res = await fetch(`${BASE_URL}/subscribers`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, phone }),
@@ -79,7 +79,7 @@ export const useSubscriberStore = create((set, get) => ({
       set({ loading: true });
 
       const headers = get().getAuthHeaders();
-      const res = await fetch(`${BASE_URL}/api/subscribers/${id}`, {
+      const res = await fetch(`${BASE_URL}/subscribers/${id}`, {
         method: "DELETE",
         headers,
       });

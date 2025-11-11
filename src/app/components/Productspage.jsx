@@ -70,7 +70,7 @@ const ProductsPage = () => {
       setLoading(true);
       try {
         // Fetch products
-        const res = await fetch("http://localhost:5000/api/products/all");
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/products/all`);
         const data = await res.json();
         let products = data.products || [];
         

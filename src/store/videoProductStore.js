@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import axios from "axios";
 
-const API_URL = "http://localhost:5000/api/videoproducts";
+const API_URL = "https://swastik-backend-tlka.onrender.com/api/videoproducts";
 
 // 🧠 Helper: Get token from localStorage
 const getToken = () => {

@@ -3,7 +3,7 @@ import DOMPurify from "isomorphic-dompurify";
 
 // ✅ Fetch the blog data from your backend
 async function getBlog(slug) {
-  const res = await fetch(`http://localhost:5000/api/blogs/slug/${slug}`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/blogs/slug/${slug}`, {
     next: { revalidate: 60 }, // Cache for 1 min
   });
   if (!res.ok) return null;

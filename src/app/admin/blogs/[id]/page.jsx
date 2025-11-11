@@ -19,7 +19,7 @@ export default function EditBlog() {
 
     const fetchBlog = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/api/blogs/${id}`, {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/blogs/${id}`, {
           headers: {
             Authorization: `Bearer ${token}`, // ✅ include token
           },
@@ -53,7 +53,7 @@ export default function EditBlog() {
     Object.keys(form).forEach((key) => fd.append(key, form[key]));
 
     try {
-      const res = await fetch(`http://localhost:5000/api/blogs/${id}`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/blogs/${id}`, {
         method: "PUT",
         headers: {
           Authorization: `Bearer ${token}`, // ✅ token added for update request

@@ -25,7 +25,7 @@ const SignupForm = () => {
     }
 
     try {
-      const res = await axios.post("http://localhost:5000/auth/send-otp", {
+      const res = await axios.post("https://swastik-backend-tlka.onrender.com/auth/send-otp", {
         email: form.email,
       });
       if (res.status === 200) {

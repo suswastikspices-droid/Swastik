@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 
-const API_BASE = "http://localhost:5000/api/company";
+const API_BASE = `${process.env.NEXT_PUBLIC_API_BASE_URL}/company`;
 
 export default function CompanyManagement() {
   const [companies, setCompanies] = useState([]);
