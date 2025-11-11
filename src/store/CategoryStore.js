@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import axios from "axios";
 
-const API_BASE = "https://dadimaabackend-2.onrender.com/api/categories";
+const API_BASE = "http://localhost:5000/api/categories";
 
 export const useCategoryStore = create((set, get) => ({
   categories: [],

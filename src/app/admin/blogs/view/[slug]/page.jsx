@@ -21,7 +21,7 @@ export default function EditBlog() {
     // Fetch blog data
     const fetchBlog = async () => {
       try {
-        const res = await fetch(`https://dadimaabackend-2.onrender.com/api/blogs/${id}`, {
+        const res = await fetch(`http://localhost:5000/api/blogs/${id}`, {
           headers: {
             Authorization: `Bearer ${token}`, // include token
           },
@@ -58,7 +58,7 @@ export default function EditBlog() {
     Object.keys(form).forEach((key) => fd.append(key, form[key]));
 
     try {
-      const res = await fetch(`https://dadimaabackend-2.onrender.com/api/blogs/${id}`, {
+      const res = await fetch(`http://localhost:5000/api/blogs/${id}`, {
         method: "PUT",
         headers: {
           Authorization: `Bearer ${token}`,

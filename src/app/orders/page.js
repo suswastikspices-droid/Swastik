@@ -20,7 +20,7 @@ const OrdersPage = () => {
   const [user, setUser] = useState(null);
   const [token, setToken] = useState(null);
 
-  const BASE_URL = "https://dadimaabackend-2.onrender.com/api";
+  const BASE_URL = "http://localhost:5000/api";
   const primaryColor = "#943900";
 
   // 🟢 Read user & token from localStorage (client-side only)

@@ -10,7 +10,7 @@ export default function BlogDashboard() {
   const router = useRouter();
 
   // Base API URL (Change to your deployed backend when needed)
-  const API_BASE_URL = "https://dadimaabackend-2.onrender.com/api";
+  const API_BASE_URL = "http://localhost:5000/api";
 
   useEffect(() => {
     const token = localStorage.getItem("token");

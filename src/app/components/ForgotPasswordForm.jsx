@@ -11,7 +11,7 @@ const ForgotPasswordForm = () => {
 
   const sendOtp = async () => {
     try {
-      await axios.post("https://dadimaabackend-2.onrender.com/auth/forgot-password", { email });
+      await axios.post("http://localhost:5000/auth/forgot-password", { email });
       setMessage("OTP sent to email!");
       setStep("otp");
     } catch (err) {
@@ -21,7 +21,7 @@ const ForgotPasswordForm = () => {
 
   const resetPassword = async () => {
     try {
-      await axios.post("https://dadimaabackend-2.onrender.com/auth/reset-password", { email, otp, newPassword });
+      await axios.post("http://localhost:5000/auth/reset-password", { email, otp, newPassword });
       setMessage("Password reset successfully!");
     } catch (err) {
       setMessage(err.response?.data?.message || "Failed to reset password");

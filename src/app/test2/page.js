@@ -7,7 +7,7 @@ export default function Navbar() {
 
   useEffect(() => {
     // Fetch products from API
-    fetch("https://dadimaabackend-2.onrender.com/api/products?limit=100")
+    fetch("http://localhost:5000/api/products?limit=100")
       .then((res) => res.json())
       .then((data) => {
         // Group products by subCategory

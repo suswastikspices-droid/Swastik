@@ -18,7 +18,10 @@ export default function Sidebar({ open, collapsed, setCollapsed, setSidebarOpen 
     
     
     { label: "Category", path: "/admin/category", icon:  <LuComponent /> },
+     { label: "Testimonials", path: "/admin/testimonials", icon:  <LuComponent /> },
+     { label: "Category Cards Homepage", path: "/admin/categoryManager", icon:  <LuComponent /> },
     { label: "Users", path: "/admin/users", icon: <LuComponent /> },
+     { label: "video Product Manager", path: "/admin/videoProductManager", icon: <LuComponent /> },
     { label: "Company", path: "/admin/company", icon: <LuComponent /> },
     // Add more items here
   ];
@@ -43,7 +46,7 @@ export default function Sidebar({ open, collapsed, setCollapsed, setSidebarOpen 
       {(open || typeof window !== "undefined" && window.innerWidth >= 768) && (
         <div className="flex items-center h-19 mb-4 px-3">
           <div className={`relative overflow-hidden   p-2 rounded ${collapsed ? "h-20 w-40" : "h-20 w-60"}`}>
-            <img src="/logo.webp" alt="Logo" className="h-full w-full object-contain" />
+            <img src="/images/logo.webp" alt="Logo" className="h-full w-full object-contain" />
           </div>
         </div>
       )}

@@ -27,7 +27,7 @@ const FloatingCartButton = () => {
   return (
     <div
       onClick={() => router.push("/cart")}
-      className="fixed bottom-6 right-6 bg-[#bb4d00] text-white rounded-full shadow-lg cursor-pointer flex items-center justify-center w-14 h-14 transition-transform duration-300 hover:scale-110"
+      className="fixed bottom-6 z-100000 right-6 bg-amber-500 text-white rounded-full shadow-lg cursor-pointer flex items-center justify-center w-14 h-14 transition-transform duration-300 hover:scale-110"
     >
       <ShoppingCart size={28} />
       {count > 0 && (

@@ -20,7 +20,7 @@ export default function UserList() {
   const fetchUsers = async () => {
     try {
       setLoading(true);
-      const res = await fetch("https://dadimaabackend-2.onrender.com/api/user", {
+      const res = await fetch("http://localhost:5000/api/user", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -86,7 +86,7 @@ export default function UserList() {
     if (!window.confirm("Are you sure you want to delete this user?")) return;
 
     try {
-      const res = await fetch(`https://dadimaabackend-2.onrender.com/api/user/${userId}`, {
+      const res = await fetch(`http://localhost:5000/api/user/${userId}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -119,7 +119,7 @@ export default function UserList() {
     const newStatus = !currentStatus;
     try {
       const res = await fetch(
-        `https://dadimaabackend-2.onrender.com/api/user/${userId}/status`,
+        `http://localhost:5000/api/user/${userId}/status`,
         {
           method: "PATCH",
           headers: {

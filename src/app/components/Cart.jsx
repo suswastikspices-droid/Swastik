@@ -59,7 +59,7 @@ const Cart = () => {
       }
 
       const orderData = { userId, addressId: savedAddressId };
-      const response = await fetch("https://dadimaabackend-2.onrender.com/api/orders/place-order", {
+      const response = await fetch("http://localhost:5000/api/orders/place-order", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

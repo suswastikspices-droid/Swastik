@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 // ✅ Set your backend base URL here
-const API_BASE = "https://dadimaabackend-2.onrender.com/api/company"; // ← Change if needed
+const API_BASE = "http://localhost:5000/api/company"; // ← Change if needed
 
 export default function CompanyManager() {
   const [companies, setCompanies] = useState([]);

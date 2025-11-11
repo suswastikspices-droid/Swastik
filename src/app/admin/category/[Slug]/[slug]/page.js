@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import { useParams } from "next/navigation";
-import toast, { Toaster } from "react-hot-toast";
-import { Upload, X, Edit2, Trash2, Plus, Image, Save, PackageSearch, DollarSign, Tag, Info, Sparkles, GripVertical, Leaf } from "lucide-react";
-import { useProductStore } from "@/store/ProductStore";
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'next/navigation';
+import toast, { Toaster } from 'react-hot-toast';
+import { Upload, X, Edit2, Trash2, Plus, Image, Save, PackageSearch, DollarSign, Tag, Info, Sparkles, GripVertical, Leaf } from 'lucide-react';
+import { useProductStore } from '@/store/ProductStore';
 
 // ----------------- Main Component -----------------
 export default function ProductManager() {
@@ -78,7 +78,6 @@ export default function ProductManager() {
     try {
       if (editingId) {
         await updateProduct(editingId, payload);
-        
         setEditingId(null);
       } else {
         await createProduct(payload);
@@ -321,7 +320,7 @@ function ProductForm({
                 label="Discount in (%)"
                 value={form.discount}
                 type="number"
-                onChange={(e) => setForm({ ...form, discount: e.target.value })}
+                onChange={(e) => setForm({ ...form, discount: e.target.value === '' ? 0 : Number(e.target.value) })}
                 icon={<Tag size={18} />}
               />
               <InputField
@@ -343,6 +342,7 @@ function ProductForm({
               {/* Added missing weight field */}
               <InputField
                 label="Weight"
+                required
                 value={form.weight}
                 onChange={(e) => setForm({ ...form, weight: e.target.value })}
                 placeholder="e.g., 500g, 1kg"
@@ -842,9 +842,14 @@ function ImageUploadSection({
 
 // ----------------- Product Card -----------------
 function ProductCard({ product, handleEdit, handleDelete }) {
-  const discountPercentage = product.discount > 0 
-    ? Math.round(((product.price - product.discount) / product.price) * 100) 
-    : 0;
+  // Parse discount as a number (it might be stored as a string)
+  const discountPercentage = parseFloat(product.discount) || 0;
+  
+  // Calculate discounted price
+  const originalPrice = parseFloat(product.price) || 0;
+  const discountedPrice = discountPercentage > 0 
+    ? (originalPrice * (1 - discountPercentage / 100)).toFixed(2)
+    : originalPrice.toFixed(2);
 
   return (
     <div className="group bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-slate-200 flex flex-col">
@@ -883,10 +888,10 @@ function ProductCard({ product, handleEdit, handleDelete }) {
         
         <div className="flex items-baseline gap-2 mb-4">
           <span className="text-2xl font-bold text-indigo-600">
-            ₹{product.discount || product.price}
+            ₹{discountedPrice}
           </span>
-          {product.discount > 0 && (
-            <span className="text-sm text-slate-400 line-through">₹{product.price}</span>
+          {discountPercentage > 0 && (
+            <span className="text-sm text-slate-400 line-through">₹{originalPrice.toFixed(2)}</span>
           )}
         </div>
 

@@ -21,7 +21,7 @@ import {
   ChevronUp,
 } from "lucide-react";
 
-const API_BASE = "https://dadimaabackend-2.onrender.com/api/contact";
+const API_BASE = "http://localhost:5000/api/contact";
 
 export default function ContactSystem() {
   const router = useRouter();

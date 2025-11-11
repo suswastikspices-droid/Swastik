@@ -26,7 +26,7 @@ const Footer = () => {
     const fetchProducts = async () => {
       try {
         const res = await fetch(
-          "https://dadimaabackend-2.onrender.com/api/products/all/?limit=100"
+          "http://localhost:5000/api/products/all/?limit=100"
         );
         const data = await res.json();
 
@@ -71,12 +71,12 @@ const Footer = () => {
     {
       name: "Instagram",
       icon: Instagram,
-      href: "https://www.instagram.com/dadimaakeladdu",
+      href: "https://www.instagram.com/_suswastik/?igsh=Mmh3czBpbWE5dDU1&utm_source=qr#",
     },
   ];
 
   return (
-    <footer className="bg-[#943900] text-gray-300">
+    <footer className="bg-[#c05300] text-gray-200">
       <div className="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
@@ -86,13 +86,10 @@ const Footer = () => {
               alt="Company Logo"
               width={160}
               height={68}
-              className="h-23 w-auto"
+              className="h-23 w-auto bg-amber-50 rounded-2xl"
             />
             <p className="text-sm leading-relaxed">
-              Our handmade product ranges from Healthy Laddu’s, Panjeeri, Pre &
-              Post Pregnancy Complete Dietary Care, etc. aiming to provide
-              healthy & a balanced diet to every generation. Dadi Maa Ke Laddu
-              is a registered brand by <b>AVYAN ENTERPRISES</b>
+              स्वाद से बढ़कर कुछ नहीं - Bringing authentic Indian flavors to your kitchen. Our spices and food products are carefully selected and processed to ensure the highest quality and authentic taste. 
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social) => (
@@ -101,12 +98,22 @@ const Footer = () => {
                   href={social.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors duration-300"
+                  className="text-gray-200 hover:text-white transition-colors duration-300"
                   aria-label={social.name}
                 >
                   <social.icon className="w-5 h-5" />
                 </Link>
-              ))}
+              ))} <div className="flex items-center space-x-3">
+                <Link href='https://www.amazon.in/l/27943762031?me=A2W6NPLCNAU8Z3&tag=ShopReferral_266c306b-a19c-4a41-b695-d6068f0550e2&ref=sf_seller_app_share_new_ls_srb' target="_blank">
+                 <Image
+                src="/images/amazon.webp"
+                alt="Amazon Logo"
+                width={80}
+                height={40}
+                className="ml-4 hover:cursor-pointer"
+              />
+              </Link>
+          </div>
             </div>
           </div>
 
@@ -127,6 +134,7 @@ const Footer = () => {
                   </Link>
                 </li>
               ))}
+              
             </ul>
           </div>
 
@@ -163,43 +171,43 @@ const Footer = () => {
               <div className="flex items-start">
                 <MapPin className="w-5 h-5 mr-3 mt-1 flex-shrink-0" />
                 <p className="text-sm">
-                  Sagar, 1, opp. VS Medihub, Nirman Nagar, Ranisati Nagar,
-                  Jaipur, Rajasthan 302019
+                 P.No.8, S.No.5, Ground Floor, Naina Vihar, Rampura Road, Sanganer, Jaipur-302029
                 </p>
               </div>
               <div className="flex items-center">
                 <Phone className="w-5 h-5 mr-3 flex-shrink-0" />
                 <a
-                  href="tel:+919461677122"
+                  href="tel:+919414446467"
                   className="text-sm hover:text-white transition-colors duration-300"
                 >
-                  +91 9461677122
+                  +91 9414446467
                 </a>
                 ,&nbsp;
                 <a
-                  href="tel:+918949342270"
+                  href="tel:+919414545230"
                   className="text-sm hover:text-white transition-colors duration-300"
                 >
-                  +91 8949342270
+                  +91 9414545230
                 </a>
               </div>
               <div className="flex items-center">
                 <Mail className="w-5 h-5 mr-3 flex-shrink-0" />
                 <a
-                  href="mailto:info@seocialmedia.in"
+                  href="mailto:Suswastikspices@gmail.com"
                   className="text-sm hover:text-white transition-colors duration-300"
                 >
-                  info@seocialmedia.in
+                  Suswastikspices@gmail.com
                 </a>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Copyright */}
-        <div className="mt-12 pt-8 border-t border-gray-800 text-center">
-          <p className="text-sm">© {currentYear} . All rights reserved.</p>
+     {/* Copyright */}
+        <div className="mt-12 pt-8 border-t border-gray-200 text-center">
+          <p className="text-sm text-gray-200">© {currentYear} Developed<Link className="cursor-pointer text-green-50  hover:font-bold" href="https://viralnexus.in/"> VIRAL nexus.</Link> All rights reserved.</p>
         </div>
+    
       </div>
     </footer>
   );

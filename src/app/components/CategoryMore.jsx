@@ -17,7 +17,7 @@ const ProductMore = ({ params }) => {
     const fetchData = async () => {
       try {
         const res = await fetch(
-          "https://dadimaabackend-2.onrender.com/api/products/all"
+          "http://localhost:5000/api/products/all"
         );
         const data = await res.json();
 

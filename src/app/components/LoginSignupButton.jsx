@@ -8,7 +8,7 @@ const LoginSignupButton = () => {
     <div className="flex items-center gap-3">
       <Link
         href="/login"
-        className="px-4 py-2    text-amber-800 rounded-md hover:bg-amber-100 transition-colors"
+        className="px-4 py-2  bg-green-500  text-amber-50 rounded-md hover:bg-green-700 transition-colors"
       >
         Login
       </Link>
